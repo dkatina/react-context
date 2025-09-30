@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.mainDark {
+  background-color: rgb(37, 37, 37);
+  color: rgb(230, 230, 230);
+}
+
+.mainLight {
+  background-color: rgb(235, 235, 235);
+  color: rgb(47, 47, 47);
+}
