@@ -2,6 +2,7 @@ import React from 'react'
 import { useTheme } from '../../contexts/ThemeContext' 
 import ThemeSwitch from '../ThemeSwitch';
 import './NavBar.css'
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
     //Summon context variables from Theme
@@ -13,10 +14,10 @@ const NavBar = () => {
       <nav style={{display: 'flex', justifyContent: 'space-between', padding: '2vw'}}>
         <h1>My Cool App</h1>
         <ul style={{display: 'flex', width: '40vw', justifyContent: 'space-between', alignItems: 'center'}}>
-          <li className='navLink'>HOME</li>
-          <li className='navLink'>PROFILE</li>
-          <li className='navLink'>LOGOUT</li>
-          <li className='navLink'>LOGIN</li>
+          <NavLink to='/' className='navlink'>HOME</NavLink>
+          <NavLink to='/profile'className='navlink'>PROFILE</NavLink>
+          <NavLink to='/' className='navlink'>LOGOUT</NavLink>
+          <NavLink to='/login'className='navlink'>LOGIN</NavLink>
           <ThemeSwitch onClick={toggleTheme}/>
         </ul>
       </nav>
