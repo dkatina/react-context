@@ -1,15 +1,19 @@
 import React, { useState } from 'react'
 import { useAuth } from '../../contexts/AuthContext'
+import { useNavigate } from 'react-router-dom'
 
 const LoginForm = () => {
     const [email, setEmail] =useState('')
     const [password, setPassword] = useState('')
     const { login } = useAuth();
+    const navigate = useNavigate();
+    
 
     const handleSubmit = async (event) =>{
         console.log(`PASSING ${email} and {password} to login`)
         event.preventDefault()
         await login(email, password)
+        navigate('/')
     }
 
   return (
