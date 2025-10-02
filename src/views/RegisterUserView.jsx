@@ -2,15 +2,14 @@ import React from 'react'
 import UserForm from '../components/UserForm/UserForm'
 import { useAuth } from '../contexts/AuthContext'
 
-const UpdateProfileView = () => {
-    const { updateUser } = useAuth();
-    
+const RegisterUserView = () => {
+    const { registerUser } = useAuth();
 
   return (
     <div>
-        <UserForm submitFunction={updateUser}/>
+        <UserForm submitFunction={ registerUser } />
     </div>
   )
 }
 
-export default UpdateProfileView
+export default RegisterUserView

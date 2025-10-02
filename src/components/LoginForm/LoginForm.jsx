@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useAuth } from '../../contexts/AuthContext'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 
 const LoginForm = () => {
     const [email, setEmail] =useState('')
@@ -29,6 +29,7 @@ const LoginForm = () => {
             type="password" />
             <button type="submit">Submit</button>
         </form>
+        <p>Don't have and account? <Link to='/register'>sign-up here</Link></p>
     </div>
   )
 }

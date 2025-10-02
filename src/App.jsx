@@ -6,6 +6,7 @@ import HomeView from "./views/HomeView";
 import LoginView from "./views/LoginView";
 import ProfileView from "./views/ProfileView";
 import UpdateProfileView from "./views/UpdateProfileView";
+import RegisterUserView from "./views/RegisterUserView";
 
 function App() {
   const { isDarkMode } = useTheme();
@@ -21,6 +22,7 @@ function App() {
           <Route path='/login' element={<LoginView/>}/>
           <Route path='/profile' element={<ProfileView/>}/>
           <Route path='/profile/update' element={<UpdateProfileView/>}/>
+          <Route path='/register' element={<RegisterUserView/>}/>
         </Routes>
       </BrowserRouter>
       

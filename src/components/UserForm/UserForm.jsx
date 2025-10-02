@@ -4,7 +4,7 @@ import { useState } from 'react'
 const UserForm = ({ submitFunction }) => {
     const [formData, setFormData] = useState({
         username: '',
-        DOB: '',
+        DOB: null,
         password: '',
         email: '',
         address: '',

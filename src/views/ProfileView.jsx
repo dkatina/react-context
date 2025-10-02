@@ -4,9 +4,14 @@ import { useTheme } from '../contexts/ThemeContext'
 import { useNavigate } from 'react-router-dom'
 
 const ProfileView = () => {
-  const { user, isAuth } = useAuth();
+  const { user,  deleteUser } = useAuth();
   const { isDarkMode } = useTheme();
   const navigate = useNavigate();
+
+  const handleDelete = () => {
+     deleteUser();
+     navigate('/')
+  }
 
   console.log(user)
   return (
@@ -21,6 +26,7 @@ const ProfileView = () => {
           <p>ADDRESS: {user?.address}</p>
           <p>DATE OF BIRTH: {user?.DOB}</p>
           <button onClick={()=>navigate('/profile/update')}>Update</button>
+          <button onClick={()=>handleDelete()}>Delete</button>
         </div>
       </div>
 
