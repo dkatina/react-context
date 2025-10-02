@@ -26,7 +26,7 @@ const NavBar = () => {
           {isAuthenticated ?
           <>
             <NavLink to='/profile'className='navlink'>PROFILE</NavLink>
-            <NavLink onClick={()=>handleLogout()} className='navlink'>LOGOUT</NavLink>
+            <p onClick={()=>handleLogout()} className='navlink'>LOGOUT</p>
           </>
           :
           <NavLink to='/login'className='navlink'>LOGIN</NavLink>

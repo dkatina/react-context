@@ -21,9 +21,11 @@ export const AuthProvider = ({ children }) =>{
     useEffect(()=> {
         const savedToken = localStorage.getItem('token')
         const savedUser = localStorage.getItem('user')
-
+        console.log(savedUser)
         setToken(savedToken)
-        setUser(JSON.parse(savedUser)) //parsing JSON object from the LS, and setting the object to our User
+        const userData = JSON.parse(savedUser)
+        console.log(userData)
+        setUser(userData) //parsing JSON object from the LS, and setting the object to our User
     },[])
 
     //Login function
@@ -40,17 +42,17 @@ export const AuthProvider = ({ children }) =>{
             })
         })
         console.log('Response')
-        const loginData = await response.json() //
+        const loginData = await response.json() //translating json to js
         console.log('Token Data:', loginData)
         setToken(loginData.token) //grabbing the token from the api response and setting it
-        setUser(JSON.stringify(loginData.user))
+        setUser(loginData.user) //unpacking the user should require parse
         localStorage.setItem('token', loginData.token)
         localStorage.setItem('user', JSON.stringify(loginData.user)) //transforming the user object into json readble string
     }
 
     const logout = () => {
         setToken('') //clearing saved tokens
-        setUser(null)
+        setUser('')
         localStorage.removeItem('token') //potentially want to clear entire ls
         localStorage.removeItem('user')
     }

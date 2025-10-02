@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route  } from "react-router-dom";
 import HomeView from "./views/HomeView";
 import LoginView from "./views/LoginView";
 import ProfileView from "./views/ProfileView";
+import UpdateProfileView from "./views/UpdateProfileView";
 
 function App() {
   const { isDarkMode } = useTheme();
@@ -19,6 +20,7 @@ function App() {
           <Route path='/' element={<HomeView/>}/>
           <Route path='/login' element={<LoginView/>}/>
           <Route path='/profile' element={<ProfileView/>}/>
+          <Route path='/profile/update' element={<UpdateProfileView/>}/>
         </Routes>
       </BrowserRouter>
       
